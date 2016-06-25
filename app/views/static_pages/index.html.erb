@@ -21,7 +21,15 @@
     $('#new-form').submit(function(event){
       event.preventDefault();
       var textBox = $('.new-todo');
-      
+      var payload = {
+        task: {
+          title: textBox.val()
+        }
+      };
+
+      $.post('/tasks', payload).success(function(data){
+        
+      })
     });
     // The taskHTtml method takes in a JavaScript representation
     // of the task and produce an HTML representation
